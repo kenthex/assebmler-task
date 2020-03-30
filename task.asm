@@ -15,8 +15,8 @@
         YEAR_CYCLE                  dd          60d
         YEAR_SUBCYCLE               dd          12d
         
-        ; ----------------------------------------------------- ∆»¬Œ“Õ€≈
-        ; ------------------------  Õ¿«¬¿Õ»≈ ∆»¬Œ“Õ€’
+        ; ----------------------------------------------------- ANIMALS
+        ; ------------------------  NAMES OF ANIMALS
         ANIMAL_MOUSE                equ         "MOUSE"
         ANIMAL_COW                  equ         "COW  "
         ANIMAL_TIGER                equ         "TIGER"
@@ -29,7 +29,7 @@
         ANIMAL_CHICKEN              equ         "CHICKEN"
         ANIMAL_DOG                  equ         "DOG  "
         ANIMAL_PIG                  equ         "PIG  "
-        ; ------------------------  œŒƒ√Œ“Œ¬ ¿ “≈ —“¿ — ∆»¬Œ“Õ€Ã»
+        ; ------------------------  MESSAGES WITH ANIMALS
         MES_ANIMAL_MOUSE            db          ANIMAL_MOUSE,10,13,0
         MES_ANIMAL_COW              db          ANIMAL_COW,10,13,0
         MES_ANIMAL_TIGER            db          ANIMAL_TIGER,10,13,0
@@ -44,14 +44,14 @@
         MES_ANIMAL_PIG              db          ANIMAL_PIG,10,13,0
 
 
-        ; ----------------------------------------------------- ÷¬≈“¿
-        ; ------------------------  Õ¿«¬¿Õ»≈ ÷¬≈“Œ¬
+        ; ----------------------------------------------------- COLORS
+        ; ------------------------  COLOR NAMES
         COLOR_GREEN                 equ         "GREEN "
         COLOR_RED                   equ         "RED  "
         COLOR_YELLOW                equ         "YELLOW "
         COLOR_WHITE                 equ         "WHITE "
         COLOR_BLACK                 equ         "BLACK "
-        ; ------------------------  œŒƒ√Œ“Œ¬ ¿ “≈ —“¿ — ÷¬≈“¿Ã»
+        ; ------------------------  MESSAGES WITH COLORS
         MES_COLOR_GREEN             db          COLOR_GREEN,0
         MES_COLOR_RED               db          COLOR_RED,0
         MES_COLOR_YELLOW            db          COLOR_YELLOW,0
@@ -79,15 +79,15 @@ main proc
         ; -----------------------------------------------------
 
         MOV                         EAX, sval(num)      
-        SUB                         EAX, 1984d          ; ƒÂÈÒÚ‚ËÂ π1
+        SUB                         EAX, 1984d          ; 
         
-        ; SUB MOD YEAR_CYCLE                            ; ƒÂÈÒÚ‚ËÂ π2
+        ; SUB MOD YEAR_CYCLE                            ; 
         MOV                         EDX, 0
         MOV                         EBX, YEAR_CYCLE
         DIV                         EBX
         ; RESULT = EDX
 
-        ; EDX MOD 12                                    ; ƒÂÈÒÚ‚ËÂ π3
+        ; EDX MOD 12                                    ; 
         MOV                         EAX, EDX
         MOV                         EDX, 0
         MOV                         EBX, YEAR_SUBCYCLE
@@ -95,7 +95,7 @@ main proc
         ; RESULT = EDX
         MOV                         animal, EDX
         
-        ; EDX / 2                                       ; ƒÂÈÒÚ‚ËÂ π4
+        ; EDX / 2                                       ; 
         MOV                         EAX, EDX
         MOV                         EDX, 0
         MOV                         EBX, 2
